@@ -1,7 +1,6 @@
 <h2>Edit your profile</h2><br/>
 
-<%= image_tag @user.image, width: "250px" %> <br>
-
+<%=image_tag@user.image, width:"250px"%><br>
 
 <%= form_with url: "/profile/edit_profile", method: :post do |f|%>
 
@@ -33,6 +32,7 @@
 <div class="field">
 <%= f.file_field :image %>
 </div>
+
  
    <div class="input-box">
      <div class ="button input-box">

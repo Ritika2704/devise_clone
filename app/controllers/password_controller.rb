@@ -6,9 +6,8 @@ class PasswordController < ApplicationController
             if @user
                 new_password = create_random_password
                 @user.update(:password=>new_password)
-                # UserNotifierMailer.forgot_password_alert(@user).deliver
-                puts "============"
-                puts new_password
+                UserNotifierMailer.forgot_password_alert(@user).deliver
+               
                 redirect_to account_login_url
             else
                 flash[:notice] = "Invalid email id, Please enter valid email"
