@@ -1,0 +1,43 @@
+<h2>Edit your profile</h2><br/>
+
+<%= image_tag @user.image, width: "250px" %> <br>
+
+
+<%= form_with url: "/profile/edit_profile", method: :post do |f|%>
+
+<div class="input-boxes">
+  <div class="input-box">
+<div class="field">
+<%= f.text_field :first_name, placeholder: 'Enter your First Name', :value=>@user.first_name%>
+</div>
+</div>
+
+  <div class="input-box">
+<div class="field">
+<%= f.text_field :last_name, placeholder: 'Enter your Last Name', :value=>@user.last_name %>
+</div>
+</div>
+
+  <div class="input-box">
+      <div class="field">
+        <%= f.telephone_field :mobile, placeholder: 'Enter your mobile', :maxlength=>"50" %>
+      </div>
+  </div>
+
+    <div class="input-box">
+        <div class="field">
+            <%= f.date_field :date_of_birth,  :maxlength=>"50" %>
+        </div>
+      </div>
+
+<div class="field">
+<%= f.file_field :image %>
+</div>
+ 
+   <div class="input-box">
+     <div class ="button input-box">
+         <%= f.submit "Update" %>
+     </div>
+   </div>
+</div>
+<%end%> 

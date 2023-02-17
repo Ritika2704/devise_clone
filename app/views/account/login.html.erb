@@ -1,0 +1,23 @@
+ <div class="title">Login</div><br/>
+<%= flash[:notice] %>
+<%= form_with url: "/account/login", method: :post do |f|%>
+
+ <div class="input-box">
+   <div class="field">
+     <%= f.email_field :email, placeholder: 'Enter your Email', :maxlength=>"50" %>
+   </div>
+ </div>
+
+    <div class="input-box">
+        <div class="field">
+           <%= f.password_field :password, placeholder: 'Enter your Password', :maxlength=>"50"%>
+        </div>
+    </div>
+ <div class="button input-box">
+    <%= f.submit "Login" %><br />
+ </div><br/>
+
+<%end %>
+
+<%= link_to "Forgot password?", password_forgot_password_path%>
+<div class="text sign-up-text">Don't have an account? <%= link_to "Sign Up", "/account/signup" %></div>
